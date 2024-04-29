@@ -13,7 +13,7 @@ Jika kalian mengikuti tutorial ini dengan benar, kalian akan mendapatkan Aplikas
 ## Terjemahan
 
 Tutorial ini telah diterjemahkan dari Bahasa Inggris ke dalam bahasa berikut:
-- [Traditional Chinese](https://github.com/gitname/react-gh-pages/issues/167#issuecomment-1925551338) (kredit: [@creaper9487](https://github.com/creaper9487))
+- [Cina Tradisional](https://github.com/gitname/react-gh-pages/issues/167#issuecomment-1925551338) (kredit: [@creaper9487](https://github.com/creaper9487))
 
 # Tutorial
 
@@ -38,82 +38,93 @@ Tutorial ini telah diterjemahkan dari Bahasa Inggris ke dalam bahasa berikut:
 
 3. Akun [GitHub](https://github.com/signup).
 
-4. Khusus kamu pengguna Android, gunakan Termux.
+4. Khusus kamu pengguna Android, gunakan [Termux](https://github.com/termux):
+   - Tingkatkan paket Termux ke versi baru
+     ```shell
+     $ pkg upgrade && pkg upgrade
+     ```
+   - Pasang `git` dan `nodejs`
+     ```shell
+     $ pkg install git && pkg install nodejs
+     ```
+   
+   Jika sudah, lanjut ke bagian **Prosedur**.
+   
 
-## Procedure
+## Prosedur
 
-### 1. Create an **empty** repository on GitHub
+### 1. Buat repositori **kosong** lewat GitHub
 
-1. Sign into your GitHub account.
-2. Visit the [Create a new repository](https://github.com/new) form.
-3. Fill in the form as follows:
-    - **Repository name:** You can enter any name you want\*.
+1. Masuk ke akun Github.
+2. Kunjungi formulir [Create a new repository](https://github.com/new).
+3. Isi sesuai data berikut:
+    - **Repository name:** Namanya bebas\*.
 
-        > \* For a [project site](https://pages.github.com/#project-site), you can enter any name you want. For a [user site](https://pages.github.com/#user-site), GitHub [requires](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) that the repository's name have the following format: `{username}.github.io` (e.g. `gitname.github.io`)
+        > \* Untuk [situs proyek](https://pages.github.com/#project-site), kalian bisa masukkan nama apa saja. Sedangkan [situs pengguna](https://pages.github.com/#user-site), GitHub [membutuhkan](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) nama repositori yang sesuai format berikut: `{username}.github.io` (contohnya `gitname.github.io`)
         
-        > The name you enter will show up in a few places: (a) in references to the repository throughout GitHub, (b) in the URL of the repository, and (c) in the URL of the deployed React app.
+        > Nama yang sudah kalian masukkan tadi akan muncul di beberapa tempat: (a) di dalam referensi repositori melalui Github, (b) tautan repositori, dan (c) in tautan tempat aplikasi React diluncurkan.
 
-        > In this tutorial, I'll be deploying the React app as a project site.
+        > Dalam tutorial ini, aku akan pilih sebagai situs proyek.
 
-        I'll enter: `react-gh-pages`
+        Aku akan namai: `react-gh-pages`
         
-   - **Repository privacy:** Select _Public_ (or _Private_\*).
+   - **Privasi repositori:** Pilih _Publik_ (atau _Privat_\*).
 
-        > \* For [GitHub Free](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-free-for-user-accounts) users, the only type of repository that can be used with GitHub Pages is _Public_. For [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) users (and other paying users), both _Public_ and _Private_ repositories can be used with GitHub Pages.
+        > \* Untuk pengguna [GitHub versi gratis](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-free-for-user-accounts), hanya bisa memilih _Publik_ untuk menjalankan Github Pages. Sedangkan pengguna [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) (dan pengguna berbayar lainnya), baik repositori _Publik_ maupun _Privat_ bisa digunakan untuk GitHub Pages.
 
-        I'll choose: _Public_
+        Karena kita pengguna gratisan, maka kita pilih: _Publik_
 
-   - **Initialize repository:** Leave all checkboxes empty.
+   - **Inisiasi repositori:** Biarkan semua kotak centang kosong.
 
-        > That will make it so GitHub creates an empty repository, instead of pre-populating the repository with a `README.md`, `.gitignore`, and/or `LICENSE` file.
-4. Submit the form.
+        > Karena itu akan membuat repositori menjadi kosong, daripada mengisinya dengan file `README.md`, `.gitignore`, dan/atau `LICENSE`.
+4. Setelah dirasa tidak ada yang terlewat, klik Submit.
 
-At this point, your GitHub account contains an empty repository, having the name and privacy type that you specified.
+Sampai di sini, kita sudah membuat repositori kosong, yang akan diisi dengan aplikasi React milik kita.
 
-### 2. Create a React app
+### 2. Buat Aplikasi React
 
-1. Create a React app named `my-app`:
+1. Buat aplikasi react dengan nama `my-app`:
 
-    > In case you want to use a different name from `my-app` (e.g. `web-ui`), you can accomplish that by replacing all occurrences of `my-app` in this tutorial, with that other name (i.e. `my-app` --> `web-ui`).
+    > Seandainya kalian mau nama yang lain (seperti `react-cantiks`, dsb.), kalian bisa menggantinya dengan nama yang lain (contohnya `my-app` --> `react-cantiks`).
   
     ```shell
     $ npx create-react-app my-app
     ```
 
-    > That command will create a React app written in JavaScript. To create one written in [TypeScript](https://create-react-app.dev/docs/adding-typescript/#installation), you can issue this command instead:
+    > Perintah ini akan membuat proyek baru dengan bahasa program Javascript. Yang mau pakai [TypeScript](https://create-react-app.dev/docs/adding-typescript/#installation), kalian bisa gunakan perintah ini:
     > ```shell
     > $ npx create-react-app my-app --template typescript
     > ```
 
-    That command will create a new folder named `my-app`, which will contain the source code of a React app.
+    Kedua perintah di atas (pilih salah satu) akan membuat sebuah folder bernama `my-app` (atau sesuai nama yang kalian mau tadi,) yang isinya adalah aplikasi React beserta alat-alat esensial lainnya.
+   
+    > Sebagai info tambahan, folder itu juga adalah repositori Git. Akan dijelaskan lebih lanjut pada Langkah 6
 
-    > In addition to containing the source code of the React app, that folder is also a Git repository. That characteristic of the folder will come into play in Step 6.
-
-    > #### Branch names: `master` vs. `main`
+    > #### Nama Branch: `master` vs. `main`
     > 
-    > The Git repository will have one branch, which will be named either (a) `master`, the default for a fresh Git installation; or (b) the value of the Git configuration variable, `init.defaultBranch`, if your computer is running Git version 2.28 or later _and_ you have [set that variable](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch) in your Git configuration (e.g. via `$ git config --global init.defaultBranch main`).
+    > Repositori Git akan mempunyai satu branch, namanya (a) `master`, nama asal dari pemasangan Git yang segar; atau (b) nilai dari pengkonfigurasi Git, `init.defaultBranch`, jika perangkat kalian menjalankan Git 2.28 atau lebih baru _dan_ kalian sudah [menetapkan variabel itu](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch) dalam konfigurasi Git (misalnya lewat perintah `$ git config --global init.defaultBranch main`).
     >
-    > Since I have not set that variable in my Git installation, the branch in my repository will be named `master`. In case the branch in your repository has a different name (which you can check by running  `$ git branch`), such as `main`; you can **replace** all occurrences of `master` throughout the remainder of this tutorial, with that other name (e.g. `master` → `main`).
+    > Karena aku tidak menetapkan nilainya, branch yang ada di repositoriku dinamakan `master`. Jika saja nama branch kalian berbeda (bisa dicek dengan  `$ git branch`), sepreti `main`; kalian bisa **ganti** nama branch yang ada di keseluruhan tutorial dengan nama lain (contohnya `master` → `main`).
 
-2. Enter the newly-created folder:
+3. Masuk ke folder proyek yang telah kita buat:
   
     ```shell
     $ cd my-app
     ```
 
-At this point, there is a React app on your computer and you are in the folder that contains its source code. All of the remaining commands shown in this tutorial can be run from that folder.
+Sampai di sini, kita sudah masuk di dalam folder proyek React beserta sumber kode di dalamnya. Sisa perintah yang ada di bawah ini dapat dijalankan dalam folder tersebut.
 
-### 3. Install the `gh-pages` npm package
+### 3. Pasang paket npm `gh-pages`
 
-1. Install the [`gh-pages`](https://github.com/tschaub/gh-pages) npm package and designate it as a [development dependency](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file):
+1. Pasang paket npm [`gh-pages`](https://github.com/tschaub/gh-pages) dan pilih sebagai [development dependency](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file):
  
     ```shell
     $ npm install gh-pages --save-dev
     ```
 
-At this point, the `gh-pages` npm package is installed on your computer and the React app's dependence upon it is documented in the React app's `package.json` file.
+Sampai di sini, `gh-pages` sudah terpasang di perangkat kita dan aplikasi React kita sudah terhubung di dalam file `package.json`.
 
-### 4. Add a `homepage` property to the `package.json` file
+### 4. Tambah properti `homepage` ke dalam file `package.json`
 
 1. Open the `package.json` file in a text editor.
    
