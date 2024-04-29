@@ -13,28 +13,27 @@ Jika kalian mengikuti tutorial ini dengan benar, kalian akan mendapatkan Aplikas
 ## Terjemahan
 
 Tutorial ini telah diterjemahkan dari Bahasa Inggris ke dalam bahasa berikut:
-- [Traditional Chinese](https://github.com/gitname/react-gh-pages/issues/167#issuecomment-1925551338) (credit: [@creaper9487](https://github.com/creaper9487))
+- [Traditional Chinese](https://github.com/gitname/react-gh-pages/issues/167#issuecomment-1925551338) (kredit: [@creaper9487](https://github.com/creaper9487))
 
 # Tutorial
 
-## Prerequisites
+## Persyaratan
 
-1. [Node and npm](https://nodejs.org/en/download/) are installed. Here are the versions I'll be using while making this tutorial:
-
+1. [Node dan npm](https://nodejs.org/en/download/). Versi yang lebih baru, biasanya lebih baik:
     ```shell
     $ node --version
-    v16.13.2
+    v21.6.2
 
     $ npm --version
-    8.1.2
+    10.2.4
     ```
-    > Installing npm adds two commands to the system—`npm` and `npx`—both of which I'll be using while making this tutorial.
+    > dimana perintah yang digunakan adalah `npm` dan `npx`. Perintah ini akan dipakai di sini.
 
-2. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed. Here's the version I'll be using while making this tutorial:
+2. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Bisa dipasang di Windows, Mac, Linux, maupun Android.
 
     ```shell
     $ git --version
-    git version 2.29.1.windows.1
+    git version 2.44.0
     ```
 
 3. Akun [GitHub](https://github.com/signup).
