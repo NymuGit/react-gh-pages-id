@@ -2,17 +2,17 @@
 
 \* dibuat menggunakan `create-react-app`
 
-# Introduction
+# Permulaan
 
 Dalam tutorial ini, Aku akan tunjukkan gimana caranya bisa membuat Aplikasi React dan meluncurkannya ke GitHub Pages.
 
-To create the React app, I'll be using [`create-react-app`](https://create-react-app.dev/), which is a tool people can use to create a React app from scratch. To deploy the React app, I'll be using [`gh-pages`](https://github.com/tschaub/gh-pages), which is an npm package people can use to deploy things to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages), a free web hosting service provided by GitHub.
+Untuk membuatnya, kalian gunakan perintah [`create-react-app`](https://create-react-app.dev/) (membutuhkan npm), yaitu alat yang membuat aplikasi React dari awal. Setelah itu, kalian bisa gunakan [`gh-pages`](https://github.com/tschaub/gh-pages), untuk meluncurkan situs web kalian ke [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages), sebuah layanan web hosting gratis dari Github.
 
-If you follow along with this tutorial, you'll end up with a new React app—hosted on GitHub Pages—which you can then customize.
+Jika kalian mengikuti tutorial ini dengan benar, kalian akan mendapatkan Aplikasi React benar-benar dijalankan di Github.
 
-## Translations
+## Terjemahan
 
-This tutorial has been translated from its original English into the following languages:
+Tutorial ini telah diterjemahkan dari Bahasa Inggris ke dalam bahasa berikut:
 - [Traditional Chinese](https://github.com/gitname/react-gh-pages/issues/167#issuecomment-1925551338) (credit: [@creaper9487](https://github.com/creaper9487))
 
 # Tutorial
@@ -37,7 +37,9 @@ This tutorial has been translated from its original English into the following l
     git version 2.29.1.windows.1
     ```
 
-3. A [GitHub](https://github.com/signup) account. :octocat:
+3. Akun [GitHub](https://github.com/signup).
+
+4. Khusus kamu pengguna Android, gunakan Termux.
 
 ## Procedure
 
