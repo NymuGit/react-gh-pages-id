@@ -93,7 +93,7 @@ Sampai di sini, kita sudah membuat repositori kosong, yang akan diisi dengan apl
 
 1. Buat aplikasi react dengan nama `my-app`:
 
-    > Seandainya kalian mau nama yang lain (seperti `react-cantiks`, dsb.), kalian bisa menggantinya dengan nama yang lain (contohnya `my-app` --> `react-cantiks`).
+    > Jika kalian mau nama yang lain (seperti `react-cantiks`, dsb.), kalian bisa menggantinya dengan nama yang lain (contohnya `my-app` --> `react-cantiks`).
   
     ```shell
     $ npx create-react-app my-app
@@ -176,7 +176,7 @@ Sampai saat ini, file `package.json` aplikasi React ini telah ditambahkan proper
 
 Sampai di sini, aplikasi React sudah bisa diluncurkan.
 
-### 6. Tambahkna "remote" yang mengarah pada repositori Github
+### 6. Tambahkan "remote" yang mengarah pada repositori Github
 
 1. Khusus yang baru memasang Git, inisiasi terlebih dulu Git ke dalam folder aplikasi React kalian dengan perintah ini:
    ```shell
