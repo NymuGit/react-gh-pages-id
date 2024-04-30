@@ -39,6 +39,10 @@ Tutorial ini telah diterjemahkan dari Bahasa Inggris ke dalam bahasa berikut:
 3. Akun [GitHub](https://github.com/signup).
 
 4. Khusus kamu pengguna Android, gunakan [Termux](https://github.com/termux):
+   - Izinkan Termux menggunakan penyimpanan ponselmu
+     ```shell
+     $ termux-setup-storage
+     ```
    - Tingkatkan paket Termux ke versi baru
      ```shell
      $ pkg upgrade && pkg upgrade
@@ -102,9 +106,9 @@ Sampai di sini, kita sudah membuat repositori kosong, yang akan diisi dengan apl
 
     > #### Nama Branch: `master` vs. `main`
     > 
-    > Repositori Git akan mempunyai satu branch, namanya (a) `master`, nama asal dari pemasangan Git yang segar; atau (b) nilai dari pengkonfigurasi Git, `init.defaultBranch`, jika perangkat kalian menjalankan Git 2.28 atau lebih baru _dan_ kalian sudah [menetapkan variabel itu](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch) dalam konfigurasi Git (misalnya lewat perintah `$ git config --global init.defaultBranch main`).
+    > Repositori Git akan mempunyai satu _branch_, namanya (a) `master`, nama asal dari pemasangan Git yang segar; atau (b) nilai dari pengkonfigurasi Git, `init.defaultBranch`, jika perangkat kalian menjalankan Git 2.28 atau lebih baru _dan_ kalian sudah [menetapkan variabel itu](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch) dalam konfigurasi Git (misalnya lewat perintah `$ git config --global init.defaultBranch main`).
     >
-    > Karena aku tidak menetapkan nilainya, branch yang ada di repositoriku dinamakan `master`. Jika saja nama branch kalian berbeda (bisa dicek dengan  `$ git branch`), sepreti `main`; kalian bisa **ganti** nama branch yang ada di keseluruhan tutorial dengan nama lain (contohnya `master` → `main`).
+    > Karena aku tidak menetapkan nilainya, _branch_ yang ada di repositoriku dinamakan `master`. Jika saja nama _branch_ kalian berbeda (bisa dicek dengan  `$ git branch`), sepreti `main`; kalian bisa **ganti** nama _branch_ yang ada di keseluruhan tutorial dengan nama lain (contohnya `master` → `main`).
 
 3. Masuk ke folder proyek yang telah kita buat:
   
@@ -126,17 +130,17 @@ Sampai di sini, `gh-pages` sudah terpasang di perangkat kita dan aplikasi React 
 
 ### 4. Tambah properti `homepage` ke dalam file `package.json`
 
-1. Open the `package.json` file in a text editor.
+1. Edit file `package.json` menggunakan teks editor.
    
     ```shell
     $ vi package.json
     ```
 
-    > In this tutorial, the text editor I'll be using is [vi](https://www.vim.org/). You can use any text editor you want; for example, [Visual Studio Code](https://code.visualstudio.com/).
+    > Dalam tutorial ini, aku menggunakan [vi](https://www.vim.org/). Kalau gak tau, kalian bisa gunakan aplikasi teks editor yang lain, misalnya [Visual Studio Code](https://code.visualstudio.com/).
 
-2. Add a `homepage` property in this format\*: `https://{username}.github.io/{repo-name}`
+2. Tambah properti `homepage` dalam format ini\*: `https://{username}.github.io/{nama-repo}`
 
-    > \* For a [project site](https://pages.github.com/#project-site), that's the format. For a [user site](https://pages.github.com/#user-site), the format is: `https://{username}.github.io`. You can read more about the `homepage` property in the ["GitHub Pages" section](https://create-react-app.dev/docs/deployment/#github-pages) of the `create-react-app` documentation.
+    > \* Untuk [situs proyek](https://pages.github.com/#project-site), itu tadi formatnya. Sedangkan untuk [situs pengguna](https://pages.github.com/#user-site), formatnya: `https://{username}.github.io`. Kalian bisa baca lebih jelasnya properti `homepage` ini di [halaman "GitHub Pages"](https://create-react-app.dev/docs/deployment/#github-pages) tentang peluncuran situs halaman.
 
     ```diff
     {
@@ -145,17 +149,17 @@ Sampai di sini, `gh-pages` sudah terpasang di perangkat kita dan aplikasi React 
     + "homepage": "https://gitname.github.io/react-gh-pages",
       "private": true,
     ```
-At this point, the React app's `package.json` file includes a property named `homepage`.
+Sampai saat ini, file `package.json` aplikasi React ini telah ditambahkan properti `homepage`.
 
-### 5. Add deployment scripts to the `package.json` file
+### 5. Tambahkan skrip peluncuran ke dalam file `package.json`
 
-1. Open the `package.json` file in a text editor (if it isn't already open in one).
+1. Buka lagi file `package.json` (kalau misalnya sudah disimpan, tapi mau diedit lagi).
    
     ```shell
     $ vi package.json
     ```
 
-2. Add a `predeploy` property and a `deploy` property to the `scripts` object:
+2. Tambahkan properti `predeploy` serta `deploy` ke dalam obyek `scripts`:
 
     ```diff
     "scripts": {
@@ -165,50 +169,54 @@ At this point, the React app's `package.json` file includes a property named `ho
         "build": "react-scripts build",
     ```
 
-At this point, the  React app's `package.json` file includes deployment scripts.
+Sampai di sini, aplikasi React sudah bisa diluncurkan.
 
 ### 6. Add a "remote" that points to the GitHub repository
 
-1. Add a "[remote](https://git-scm.com/docs/git-remote)" to the local Git repository.
+1. Khusus yang baru memasang Git, inisiasi terlebih dulu Git ke dalam folder aplikasi React kalian dengan perintah ini:
+   ```shell
+   $ cd my-app
+   $ git init
+   $ git add .
+   $ git config --global user.name {nama-akun-github}
+   ```
 
-    You can do that by issuing a command in this format: 
+   Ini untuk mencegah error pada saat menggunakan perintah selanjutnya.
+
+2. Tambahkan "[remote](https://git-scm.com/docs/git-remote)" ke dalam repositori Git lokal: 
     
     ```shell
-    $ git remote add origin https://github.com/{username}/{repo-name}.git
+    $ git remote add origin https://github.com/{username}/{nama-repo}.git
     ```
-    
-    To customize that command for your situation, replace `{username}` with your GitHub username and replace `{repo-name}` with the name of the GitHub repository you created in Step 1.
 
-    In my case, I'll run:
+    Sebagai contoh, kutulis seperti ini:
 
     ```shell
     $ git remote add origin https://github.com/gitname/react-gh-pages.git
     ```
 
-    > That command tells Git where I want it to push things whenever I—or the `gh-pages` npm package acting on my behalf—issue the `$ git push` command from within this local Git repository.
+    > Perintah ini mengotomasi perintah `$ git push` ke dalam repositori Github yang sudah kita buat sebelumnya pada Langkah 1.
 
-At this point, the local repository has a "remote" whose URL points to the GitHub repository you created in Step 1.
+### 7. Dorong Aplikasi React ke Repositori Github
 
-### 7. Push the React app to the GitHub repository
-
-1. Push the React app to the GitHub repository
+1. Dorong Aplikasi React milik kita menggunakan perintah ini:
 
     ```shell
     $ npm run deploy
     ```
 
-    > That will cause the `predeploy` and `deploy` scripts defined in `package.json` to run.
+    > Yang akan menyebabkan skrip `predeploy` dan `deploy` yang sudah ditulis di file `package.json` dijalankan.
     >
-    > Under the hood, the `predeploy` script will build a distributable version of the React app and store it in a folder named `build`. Then, the `deploy` script will push the contents of that folder to a new commit on the `gh-pages` branch of the GitHub repository, creating that branch if it doesn't already exist.
+    > Skrip `predeploy` akan membuat aplikasi React versi distribusi dan disetor ke dalam forder bernama `build`. Lalu, skrip `deploy` akan mendorong konten dalam folder tersebut dalam sebuah _commit_ baru _branch_`gh-pages` repositori Github, kalau belum ada.
 
-    > By default, the new commit on the `gh-pages` branch will have a commit message of "Updates". You can [specify a custom commit message](https://github.com/gitname/react-gh-pages/issues/80#issuecomment-1042449820) via the `-m` option, like this:
+    > Secara default, _commit_ baru di _branch_ `gh-pages` akan ada pesan _commit_ yakni "Updates". Kalian bisa [menentukan pesan sendiri](https://github.com/gitname/react-gh-pages/issues/80#issuecomment-1042449820) lewat opsi `-m`, seperti ini:
     > ```shell
-    > $ npm run deploy -- -m "Deploy React app to GitHub Pages"
+    > $ npm run deploy -- -m "Luncurkan aplikasi React ke Github"
     > ```
 
-At this point, the GitHub repository contains a branch named `gh-pages`, which contains the files that make up the distributable version of the React app. However, we haven't configured GitHub Pages to _serve_ those files yet.
+Sampai di sini, repositori Github berisi _branch_ bernama `gh-pages`, di mana isinya adalah file aplikask React versi distribusi. Bagaimanapun, kita belum mengatur Github Pages untuk _menjalankan_ file tersebut.
 
-### 8. Configure GitHub Pages
+### 8. Atur GitHub Pages
 
 1. Navigate to the **GitHub Pages** settings page
    1. In your web browser, navigate to the GitHub repository
