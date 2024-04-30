@@ -2,6 +2,10 @@
 
 \* dibuat menggunakan `create-react-app`
 
+# Sumber asli
+
+Kredit untuk [gitname, click here for original tutorial](https://github.com/gitname/react-gh-pages)
+
 # Permulaan
 
 Dalam tutorial ini, Aku akan tunjukkan gimana caranya bisa membuat Aplikasi React dan meluncurkannya ke GitHub Pages.
@@ -307,6 +311,9 @@ Note: I specified the avatars using HTML because, when I did so using Markdown,
 </a>
 <a href="https://github.com/jackweyhrich" target="_blank" title="jackweyhrich">
   <img src="https://github.com/jackweyhrich.png?size=40" height="40" width="40" alt="jackweyhrich" />
+</a>
+<a href="https://github.com/nymugit" target="_blank" title="Aku2Nama">
+  <img src="https://github.com/nymugit.png?size=40" height="40" width="40" alt="nymugit" />
 </a>
 
 This list is maintained manually—for now—and includes (a) each person who submitted a pull request that was eventually merged into `master`, and (b) each person who contributed in a different way (e.g. providing constructive feedback) and who approved of me including them in this list.
