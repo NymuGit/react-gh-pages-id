@@ -49,7 +49,7 @@ Tutorial ini telah diterjemahkan dari Bahasa Inggris ke dalam bahasa berikut:
      ```
    - Tingkatkan paket Termux ke versi baru
      ```shell
-     $ pkg upgrade && pkg upgrade
+     $ pkg upgrade && pkg update
      ```
    - Pasang `git` dan `nodejs`
      ```shell
@@ -112,7 +112,7 @@ Sampai di sini, kita sudah membuat repositori kosong, yang akan diisi dengan apl
     > 
     > Repositori Git akan mempunyai satu _branch_, namanya (a) `master`, nama asal dari pemasangan Git yang segar; atau (b) nilai dari pengkonfigurasi Git, `init.defaultBranch`, jika perangkat kalian menjalankan Git 2.28 atau lebih baru _dan_ kalian sudah [menetapkan variabel itu](https://github.blog/2020-07-27-highlights-from-git-2-28/#introducing-init-defaultbranch) dalam konfigurasi Git (misalnya lewat perintah `$ git config --global init.defaultBranch main`).
     >
-    > Karena aku tidak menetapkan nilainya, _branch_ yang ada di repositoriku dinamakan `master`. Jika saja nama _branch_ kalian berbeda (bisa dicek dengan  `$ git branch`), sepreti `main`; kalian bisa **ganti** nama _branch_ yang ada di keseluruhan tutorial dengan nama lain (contohnya `master` → `main`).
+    > Karena aku tidak menetapkan nilainya, _branch_ yang ada di repositoriku dinamakan `master`. Jika saja nama _branch_ kalian berbeda (bisa dicek dengan  `$ git branch`), seperti `main`; kalian bisa **ganti** nama _branch_ yang ada di keseluruhan tutorial dengan nama lain (contohnya `master` → `main`).
 
 3. Masuk ke folder proyek yang telah kita buat:
   
@@ -141,6 +141,7 @@ Sampai di sini, `gh-pages` sudah terpasang di perangkat kita dan aplikasi React 
     ```
 
     > Dalam tutorial ini, aku menggunakan [vi](https://www.vim.org/). Kalau gak tau, kalian bisa gunakan aplikasi teks editor yang lain, misalnya [Visual Studio Code](https://code.visualstudio.com/).
+    > Atau, untuk pengguna Android, bisa menggunakan teks editor bawaan Termux dengan perintah `$ nano package.json`.
 
 2. Tambah properti `homepage` dalam format ini\*: `https://{username}.github.io/{nama-repo}`
 
